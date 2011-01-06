@@ -1,21 +1,20 @@
-Retwis-RB
+mtweet
 =========
-
-An example Twitter application using the Redis key-value database.
-
-Daniel Lucraft (dan@fluentradical.com)
+An example Twitter application using the Membase NoSQL database.
 
 Requirements
 ------------
 
  * Ruby
  * Sinatra: sudo gem install sinatra
- * Redis: http://code.google.com/p/redis/
+ * Memcache-client: sudo gem install memcache-client
+ * Membase: http://membase.org
 
 Starting Application
 --------------------
 
-Make sure the redis server is running.
+Make sure the membase server is running (at 127.0.0.1:11211).
+
 Run:
 
    ruby app.rb
@@ -24,3 +23,10 @@ License
 -------
 
 MIT
+
+Thanks
+------
+
+Daniel Lucraft (dan@fluentradical.com) for the original Retwis-rb
+at http://danlucraft.com/blog/tag/retwis-rb
+

@@ -2,19 +2,14 @@
 require 'rubygems'
 require 'sinatra'
 require 'erb'
-require 'rubyredis'
-
+require 'store'
 require 'domain'
 require 'login-signup'
 
 set :sessions, true
 
-def redis
-  $redis ||= RedisClient.new(:timeout => nil)
-end
-
-before do
-  keys = redis.keys("*")
+def mb
+  $mb ||= Store.new(['127.0.0.1:11211'])
 end
 
 get '/' do
