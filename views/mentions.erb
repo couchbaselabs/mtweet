@@ -4,7 +4,7 @@
 <div class="span-16" id="maincol">
   <h2>Mentions of: <%= @user.username %></h2>
   <% if @logged_in_user != @user %>
-    <div class="box">  
+    <div class="box">
       <% if @logged_in_user.following?(@user) %>
         <a href="/<%= @logged_in_user.username %>/stopfollow/<%= @user.username %>">Stop following</a>
       <% else %>
@@ -12,7 +12,7 @@
       <% end %>
     </div>
   <% end %>
-  
+
   <%= erb :_posts %>
 </div>
 

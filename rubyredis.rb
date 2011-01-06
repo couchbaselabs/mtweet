@@ -41,7 +41,7 @@ class RedisClient
         "renamenx"=> ConvertToBool,
         "expire"=> ConvertToBool,
         "keys" => lambda{|r| r.split(" ")},
-        "info" => lambda{|r| 
+        "info" => lambda{|r|
             info = {}
             r.each_line {|kv|
                 k,v = kv.split(":",2).map{|x| x.chomp}

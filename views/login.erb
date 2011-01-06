@@ -2,13 +2,13 @@
 
 <div class="span-11 box">
   <h2>Login</h2>
-  
+
   <% if @login_error %>
     <div class="error">
       <%= @login_error %>
     </div>
   <% end %>
-  
+
   <form action="login" method="post">
     <table>
       <tr>
@@ -22,17 +22,17 @@
     </table>
     <input type="submit" value="Log in" />
   </form>
-</div>  
+</div>
 
 <div class="span-11 last box">
   <h2>Sign up</h2>
-  
+
   <% if @signup_error %>
     <div class="error">
       <%= @signup_error %>
     </div>
   <% end %>
-  
+
   <form action="signup" method="post">
     <table>
       <tr>

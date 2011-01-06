@@ -1,6 +1,6 @@
 
 require 'rubygems'
-require 'sinatra'  
+require 'sinatra'
 require 'erb'
 require 'rubyredis'
 
@@ -60,7 +60,7 @@ end
 
 get '/:username' do |username|
   @user = User.find_by_username(username)
-  
+
   @posts = @user.posts
   @followers = @user.followers
   @followees = @user.followees
@@ -79,7 +79,7 @@ helpers do
 <a href="/#{user.username}">#{user.username}</a>
     HTML
   end
-  
+
   def pluralize(singular, plural, count)
     if count == 1
       count.to_s + " " + singular
@@ -87,7 +87,7 @@ helpers do
       count.to_s + " " + plural
     end
   end
-  
+
   def display_post(post)
     post.content.gsub(/@\w+/) do |mention|
       if user = User.find_by_username(mention[1..-1])
@@ -114,7 +114,7 @@ helpers do
       return distance_in_minutes.round.to_s + " minutes ago"
     when 46..89
       return "about an hour ago"
-    when 90..1439        
+    when 90..1439
       return (distance_in_minutes/60).round.to_s + " hours ago"
     when 1440..2879
       return "about a day ago"
@@ -122,7 +122,7 @@ helpers do
       (distance_in_minutes / 1440).round.to_s + " days ago"
     when 43200..86399
        "about a month ago"
-    when 86400..525599   
+    when 86400..525599
       (distance_in_minutes / 43200).round.to_s + " months ago"
     when 525600..1051199
       "about a year ago"
@@ -131,7 +131,7 @@ helpers do
     end
   end
 end
-        
+
 
 
 
