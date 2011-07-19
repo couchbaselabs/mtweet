@@ -1,5 +1,6 @@
 mtweet
 =========
+
 An example Twitter application using the Membase NoSQL database.
 
 Requirements
@@ -8,12 +9,13 @@ Requirements
  * Ruby
  * Sinatra: sudo gem install sinatra
  * Memcache-client: sudo gem install memcache-client
- * Membase: http://membase.org
+ * Membase: http://couchbase.com
 
 Starting Application
 --------------------
 
-Make sure the membase server is running (at 127.0.0.1:11211).
+Make sure the membase server is running and has a default bucket
+configured at 127.0.0.1:11211.
 
 Run:
 
